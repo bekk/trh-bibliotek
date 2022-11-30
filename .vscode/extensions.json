@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "mikestead.dotenv",
+    "mrorz.language-gettext",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "visualstudioexptteam.vscodeintellicode"
+  ]
+}

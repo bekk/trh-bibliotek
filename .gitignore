@@ -23,3 +23,14 @@ yarn-debug.log*
 yarn-error.log*
 
 .history/
+
+
+### VisualStudioCode ###
+# ignore everything unless explicitly added ('!' prefixed)
+.vscode/**/*
+!.vscode/settings.emil.json
+!.vscode/extensions.json
+!.vscode/extensions.recommended.json
+!.vscode/launch.json
+!.vscode/settings.default.json
+!.vscode/settings.suggestions.json
