@@ -1,12 +1,21 @@
 import { BIBLIOTEK } from '~/index';
 
+const recordId = 'receAD1TDjjfgFZe2';
+const books = 'tblAwYVtCDnHuCoOJ';
+const view = 'viwCePCmr5htvJz1X';
+
 export function getData(): void {
-  const recordId = 'receAD1TDjjfgFZe2';
-  const books = 'tblAwYVtCDnHuCoOJ';
-  const view = 'viwCePCmr5htvJz1X';
-  console.log(BIBLIOTEK(books).find(recordId));
-
-  console.log(BIBLIOTEK(books).select({ maxRecords: 3, view: view }));
-
   // return BIBLIOTEK(AIRTABLE_TABLE_ID).find(recordId);
+}
+
+export function getBooks(): void {
+  let asdf = [];
+
+  const allBooks = BIBLIOTEK(books)
+    .select({
+      view: view,
+    })
+    .all((records) => records.foreach((record) => asdf.push(record.get('title'))));
+
+  console.log(asdf);
 }
