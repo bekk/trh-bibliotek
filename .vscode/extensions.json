@@ -6,6 +6,7 @@
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
+    "stylelint.vscode-stylelint",
     "visualstudioexptteam.vscodeintellicode"
   ]
 }
