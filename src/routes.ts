@@ -1,4 +1,4 @@
 export const ROUTES = {
-    index: "/",
-    overview: "/overview/"
-}
+  index: '/',
+  overview: '/overview/',
+} as const;

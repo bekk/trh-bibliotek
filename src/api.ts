@@ -1,21 +1,16 @@
-import { BIBLIOTEK } from '~/index';
+import { BooksDTO } from '~/DTO';
+import { AIRTABLE_TABLE_ID, BIBLIOTEK } from '~/index';
 
-const recordId = 'receAD1TDjjfgFZe2';
-const books = 'tblAwYVtCDnHuCoOJ';
-const view = 'viwCePCmr5htvJz1X';
-
-export function getData(): void {
-  // return BIBLIOTEK(AIRTABLE_TABLE_ID).find(recordId);
-}
-
-export function getBooks(): void {
-  let asdf = [];
-
-  const allBooks = BIBLIOTEK(books)
-    .select({
-      view: view,
-    })
-    .all((records) => records.foreach((record) => asdf.push(record.get('title'))));
-
-  console.log(asdf);
+export function getBooks(): BooksDTO[] {
+  const books: BooksDTO[] = [];
+  BIBLIOTEK(AIRTABLE_TABLE_ID)
+    .select()
+    .all()
+    .then((records) => {
+      records.forEach(function (record) {
+        const book: BooksDTO = record._rawJson.fields;
+        books.push(book);
+      });
+    });
+  return books;
 }
