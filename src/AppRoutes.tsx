@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { HealthPage } from '~/Pages';
+import { HealthPage, BooksOverviewPage } from '~/Pages';
 import { ROUTES } from './routes';
 
 export function AppRoutes() {
@@ -7,7 +7,8 @@ export function AppRoutes() {
 
   return (
     <Routes>
-      <Route path={ROUTES.frontend.index} element={<HealthPage />} />
+      <Route path={ROUTES.index} element={<HealthPage />} />
+      <Route path={ROUTES.overview} element={<BooksOverviewPage />} />
     </Routes>
   );
 }
