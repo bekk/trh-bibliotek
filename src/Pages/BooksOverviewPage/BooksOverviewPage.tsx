@@ -1,11 +1,22 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getBooks } from '~/api';
+import { Book } from '~/Components';
+import { BooksDTO } from '~/DTO';
 
 export function BooksOverviewPage() {
+  const [books, setBooks] = useState<BooksDTO[]>([]);
+
   useEffect(() => {
-    const books = getBooks();
-    console.log(books);
+    getBooks().then(setBooks);
   }, []);
 
-  return <span data-cy="health">Bøker kommer her</span>;
+  return (
+    <div>
+      <h1>Bøker:</h1>
+      {books.length}
+      {books.map((book, i) => (
+        <Book key={i} book={book} />
+      ))}
+    </div>
+  );
 }
