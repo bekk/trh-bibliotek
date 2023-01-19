@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { HealthPage, BooksOverviewPage } from '~/Pages';
+import { BooksOverviewPage, HealthPage } from '~/Pages';
 import { ROUTES } from './routes';
 
 export function AppRoutes() {
