@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import { BooksDTO } from '~/DTO';
+import styles from './Book.module.scss'
 
 type BookProps = {
   book: BooksDTO;
@@ -6,5 +8,5 @@ type BookProps = {
 };
 
 export function Book({ className, book }: BookProps) {
-  return <div className={className}>{book?.title}</div>;
+  return <div className={ classNames(className, styles.book) }>{book?.title}</div>;
 }

@@ -1,1 +1,13 @@
 @import 'src/constants';
+
+// Golden Ratio
+$height: 300px;
+$width: $height * (8/13);
+
+.book{
+  background-color: grey;
+  margin: 20px;
+  padding: 20px;
+  height: $height;
+  width: $width;
+}
