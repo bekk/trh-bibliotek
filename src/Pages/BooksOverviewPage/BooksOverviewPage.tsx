@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getBooks } from '~/api';
-import { Book } from '~/Components';
+import { BookGrid } from '~/Components/BookGrid';
 import { BooksDTO } from '~/DTO';
 
 export function BooksOverviewPage() {
@@ -14,9 +14,7 @@ export function BooksOverviewPage() {
     <div>
       <h1>Bøker:</h1>
       {books.length}
-      {books.map((book, i) => (
-        <Book key={i} book={book} />
-      ))}
+      <BookGrid books={books} />
     </div>
   );
 }
