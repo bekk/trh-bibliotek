@@ -1,6 +1,7 @@
 import Airtable from 'airtable';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import '~/index.css';
 import { GlobalContextProvider } from '~/GlobalContextProvider';
 import { reportWebVitals } from '~/reportWebVitals';
 import { App } from './App';
