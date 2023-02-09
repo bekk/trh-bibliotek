@@ -1,11 +1,12 @@
 export type BooksDTO = {
+  id: string;
   title?: string;
   authors?: string;
   publisher?: string;
   ISBN?: string;
   year?: number;
   antall?: number;
-  Låntetakere?: string;
+  Låntetakere?: string[];
   Cover?: Cover;
 };
 
@@ -30,4 +31,9 @@ export type Thumbnails = {
   full?: Thumbnail;
   large?: Thumbnail;
   small?: Thumbnail;
+};
+
+export type UserDTO = {
+  id: string;
+  Name?: string;
 };

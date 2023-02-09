@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import classNames from 'classnames';
 import { BooksDTO } from '~/DTO';
 import styles from './Book.module.scss';
@@ -18,7 +19,12 @@ export function Book({ className, book }: BookProps) {
       <span className={styles.bookStatus} style={{ backgroundColor: statusColor }}>
         Ledige: {available}/{count}
       </span>
-      <div className={styles.book}>{book?.title}</div>
+      <div className={styles.book}>
+        <div>{book?.title}</div>
+        <Button variant="contained" color="success">
+          Lån
+        </Button>
+      </div>
     </div>
   );
 }

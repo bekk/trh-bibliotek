@@ -9,6 +9,7 @@ import { App } from './App';
 export const AIRTABLE_API_KEY = import.meta.env.VITE_AIRTABLE_API_KEY || '';
 export const AIRTABLE_BASE_ID = import.meta.env.VITE_AIRTABLE_BASE_ID || '';
 export const AIRTABLE_TABLE_ID = import.meta.env.VITE_AIRTABLE_TABLE_ID || '';
+export const AIRTABLE_TABLE_ID_USERS = import.meta.env.VITE_AIRTABLE_TABLE_ID_USERS || '';
 // console.log('AIRTABLE_API_KEY:', AIRTABLE_API_KEY);
 
 Airtable.configure({
