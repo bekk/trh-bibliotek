@@ -11,8 +11,8 @@ type BookGridProps = {
 export function BookGrid({ className, books }: BookGridProps) {
   return (
     <div className={classNames(className, styles.bookGrid)}>
-      {books.map((book) => (
-        <Book book={book} />
+      {books.map((book, index) => (
+        <Book key={index} book={book} />
       ))}
     </div>
   );
