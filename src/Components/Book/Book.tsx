@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { BooksDTO } from '~/DTO';
-import styles from './Book.module.scss'
+import styles from './Book.module.scss';
 
 type BookProps = {
   book: BooksDTO;
@@ -8,5 +8,17 @@ type BookProps = {
 };
 
 export function Book({ className, book }: BookProps) {
-  return <div className={ classNames(className, styles.book) }>{book?.title}</div>;
+  const count = book?.antall || 0;
+  const borrowers = book?.Låntetakere?.length || 0;
+  const available = count - borrowers;
+  const isAvailable = available > 0;
+  const statusColor = isAvailable ? 'green' : 'red';
+  return (
+    <div className={classNames(className)}>
+      <span className={styles.bookStatus} style={{ backgroundColor: statusColor }}>
+        Ledige: {available}/{count}
+      </span>
+      <div className={styles.book}>{book?.title}</div>
+    </div>
+  );
 }
