@@ -5,12 +5,13 @@ $height: 300px;
 $width: $height * calc(8 / 13);
 
 $bg: #000000;
-$bg-accent: #442300;
+$bg-accent: #251300;
 $border-color: #333333;
 
 $flip-speed: 800ms;
 
 .bookStatus {
+  visibility: hidden;
   padding: 0 10px;
   margin-left: 120px;
   border-top-left-radius: 10px;
@@ -43,5 +44,8 @@ $flip-speed: 800ms;
 .wrapper:hover {
   .book {
     filter: brightness(1.5);
+  }
+  .bookStatus {
+    visibility: visible;
   }
 }
