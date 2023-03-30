@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { Navbar } from '~/Components/Navbar';
 import { Children } from '~/types';
 import styles from './Page.module.scss';
 
@@ -14,8 +15,11 @@ type PageProps = {
  */
 export function Page({ children, classNameInner, classNameOuter }: PageProps) {
   return (
-    <div className={classNames(styles.container, classNameOuter)}>
-      <div className={classNames(styles.content, classNameInner)}>{children}</div>
-    </div>
+    <>
+      <Navbar />
+      <div className={classNames(styles.container, classNameOuter)}>
+        <div className={classNames(styles.content, classNameInner)}>{children}</div>
+      </div>
+    </>
   );
 }

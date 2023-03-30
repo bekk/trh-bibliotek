@@ -7,6 +7,7 @@ export function IndexPage() {
       <h1>Trondheim bibliotek</h1>
 
       <Link url={ROUTES.overview}>Bøker</Link>
+      <Link url={ROUTES.users}>Brukere</Link>
     </Page>
   );
 }

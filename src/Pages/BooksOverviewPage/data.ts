@@ -10,4 +10,4 @@ const mockedBook: BookDTO = {
   antall: 4,
   Låntetakere: ['Olde', 'Dole', 'Doffen'],
 };
-export const mockedBooks = Array(10).fill(mockedBook);
+export const mockedBooks: BookDTO[] = Array(10).fill(mockedBook);

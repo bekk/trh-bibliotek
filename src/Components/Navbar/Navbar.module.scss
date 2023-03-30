@@ -1,0 +1,47 @@
+@import 'src/constants';
+
+// Golden ratio.
+$height: 300px;
+$width: $height * calc(8 / 13);
+
+$bg: #000000;
+$bg-accent: #442300;
+$border-color: #333333;
+
+$flip-speed: 800ms;
+
+.bookStatus {
+  padding: 0 10px;
+  margin-left: 120px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.book {
+  // background: linear-gradient(157deg, $bg 20%, $bg-accent 50%, $bg 100%);
+  background: radial-gradient(circle, $bg-accent 0%, $bg 100%);
+  padding: 20px;
+  height: $height;
+  width: $width;
+  border-radius: 10px;
+  border: 1px solid $border-color;
+}
+
+.flipped {
+  transition: $flip-speed;
+  transform: rotateY(180deg) scaleX(-1);
+
+  .book {
+    background: #333333;
+  }
+}
+
+.unflipped {
+  transition: $flip-speed;
+}
+
+.wrapper:hover {
+  .book {
+    filter: brightness(1.5);
+  }
+}
