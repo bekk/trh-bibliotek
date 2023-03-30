@@ -5,6 +5,7 @@
   text-decoration: none;
   &:hover {
     text-decoration: underline;
+    filter: brightness(1.5);
   }
 }
 
