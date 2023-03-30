@@ -1,2 +1,3 @@
+export { BooksOverviewPage } from './BooksOverviewPage';
 export { HealthPage } from './HealthPage';
-export { BooksOverviewPage } from './BooksOverviewPage'
+export { IndexPage } from './IndexPage';

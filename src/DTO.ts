@@ -1,4 +1,4 @@
-export type BooksDTO = {
+export type BookDTO = {
   id: string;
   title?: string;
   authors?: string;

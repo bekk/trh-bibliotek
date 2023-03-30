@@ -1,0 +1,13 @@
+@import 'src/constants';
+
+.link {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.underline {
+  text-decoration: underline $link-color;
+}

@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { BooksOverviewPage, HealthPage } from '~/Pages';
+import { BooksOverviewPage, HealthPage, IndexPage } from '~/Pages';
 import { ROUTES } from './routes';
 
 export function AppRoutes() {
@@ -7,8 +7,9 @@ export function AppRoutes() {
 
   return (
     <Routes>
-      <Route path={ROUTES.index} element={<HealthPage />} />
+      <Route path={ROUTES.index} element={<IndexPage />} />
       <Route path={ROUTES.overview} element={<BooksOverviewPage />} />
+      <Route path={ROUTES.health} element={<HealthPage />} />
     </Routes>
   );
 }

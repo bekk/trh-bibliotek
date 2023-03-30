@@ -1,10 +1,10 @@
 import classNames from 'classnames';
-import { BooksDTO } from '~/DTO';
-import { Book } from '../Book/Book';
+import { Book } from '~/Components';
+import { BookDTO } from '~/DTO';
 import styles from './BookGrid.module.scss';
 
 type BookGridProps = {
-  books: BooksDTO[];
+  books: BookDTO[];
   className?: string;
 };
 
