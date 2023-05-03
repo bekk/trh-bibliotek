@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { BookDTO } from '~/DTO';
@@ -10,12 +9,25 @@ type BookProps = {
 };
 
 export function Book({ className, book }: BookProps) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   const count = book?.antall || 0;
   const borrowers = book?.Låntetakere?.length || 0;
   const available = count - borrowers;
   const isAvailable = available > 0;
   const statusColor = isAvailable ? 'green' : 'red';
-  const [isFlipped, setIsFlipped] = useState(false);
+  const btnTitle = isAvailable ? 'Lån bok' : 'Utlånt';
+
+  function borrowHandler(event: React.MouseEvent) {
+    event.stopPropagation();
+    // console.log(1, event);
+    // console.log(book);
+    // book.patch();
+
+    // const newBook: Partial<BookDTO> = { antall: count + 1 };
+    // updateBook(book.id, newBook).then((r) => console.log(r));
+    // borrow(book.id, book, { Name: 'haha' });
+  }
 
   return (
     <div
@@ -32,9 +44,14 @@ export function Book({ className, book }: BookProps) {
         {isFlipped && (
           <>
             <div>{book?.authors}</div>
-            <Button variant="contained" color="success">
+            <br />
+            <div style={{ fontSize: '1.3em' }}>Lånetakere:</div>
+            {book?.Låntetakere?.map((user, i) => (
+              <div key={i}>{user}</div>
+            ))}
+            <button title={btnTitle} disabled={!isAvailable} onClick={borrowHandler}>
               Lån
-            </Button>
+            </button>
           </>
         )}
       </div>

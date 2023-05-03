@@ -8,6 +8,6 @@ const mockedBook: BookDTO = {
   ISBN: 'ISBN1234',
   year: 2023,
   antall: 4,
-  Låntetakere: ['Olde', 'Dole', 'Doffen'],
+  Låntetakere: ['Ole', 'Dole', 'Doffen'],
 };
 export const mockedBooks: BookDTO[] = Array(10).fill(mockedBook);
