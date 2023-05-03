@@ -10,7 +10,7 @@ services:
     volumes:
       - ./src:/app/src # Share project code between host machine and container to enable reload on changes.
     env_file:
-      - ./.docker.env # Environment for frontend docker
+      - ./.env.docker # Environment for frontend docker
     environment:
       - IS_DOCKER=yes
       - CHOKIDAR_USEPOLLING=true # Might not be needed. Used for hot reload.
