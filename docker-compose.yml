@@ -1,0 +1,19 @@
+version: '3.9'
+
+### Services ###
+services:
+  ### Frontend React ###
+  # Mount sync on OSX Docker VM is really slow on some systems. Perhaps run on host machine instead.
+  frontend:
+    build: . # Build in the context of this directory (meaning: use Dockerfile, .dockerignore etc.)
+    image: trh-bibliotek
+    volumes:
+      - ./src:/app/src # Share project code between host machine and container to enable reload on changes.
+    env_file:
+      - ./.docker.env # Environment for frontend docker
+    environment:
+      - IS_DOCKER=yes
+      - CHOKIDAR_USEPOLLING=true # Might not be needed. Used for hot reload.
+    ports:
+      - '3000:3000'
+    command: yarn start:docker --host 0.0.0.0 --port 3000
