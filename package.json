@@ -8,6 +8,7 @@
     "dev": "yarn run start",
     "build": "vite build",
     "preview": "vite preview",
+    "sync": "yarn install --frozen-lockfile",
     "stylelint-check": "stylelint-config-prettier-scss-check",
     "eslint:check": "eslint --config .eslintrc.js src",
     "stylelint:check": "stylelint --config .stylelintrc src/**/*.{css,scss}"
