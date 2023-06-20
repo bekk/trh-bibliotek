@@ -156,13 +156,3 @@ export const reverse: Reverse = ({ pattern, urlParams = {}, queryParams = {} }) 
     return pattern;
   }
 };
-
-export const reverseForce: ReverseForce = ({ pattern, urlParams = {} }) => {
-  try {
-    return compileWithParams(pattern, urlParams);
-  } catch (err) {
-    const tokens = parse(pattern);
-
-    return tokens.filter((token: unknown) => typeof token === 'string').join('');
-  }
-};
