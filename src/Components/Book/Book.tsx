@@ -19,8 +19,8 @@ export function Book({ className, book }: BookProps) {
   const btnTitle = isAvailable ? 'Lån bok' : 'Utlånt';
 
   function borrowHandler(event: React.MouseEvent) {
-    event.stopPropagation();
-    // console.log(1, event);
+    event.stopPropagation(); // Prevent flipping card when pressing button.
+    console.log(1, event);
     // console.log(book);
     // book.patch();
 
@@ -39,21 +39,19 @@ export function Book({ className, book }: BookProps) {
       </span>
       <div className={classNames(styles.book)}>
         {/* Frontside */}
-        {!isFlipped && <div>{book?.title}</div>}
+        <div className={isFlipped ? styles.visible : styles.hidden}>{book?.title}</div>
         {/* Backside */}
-        {isFlipped && (
-          <>
-            <div>{book?.authors}</div>
-            <br />
-            <div style={{ fontSize: '1.3em' }}>Lånetakere:</div>
-            {book?.Låntetakere?.map((user, i) => (
-              <div key={i}>{user}</div>
-            ))}
-            <button title={btnTitle} disabled={!isAvailable} onClick={borrowHandler}>
-              Lån
-            </button>
-          </>
-        )}
+        <div className={isFlipped ? styles.hidden : styles.visible}>
+          <div>{book?.authors}</div>
+          <br />
+          <div style={{ fontSize: '1.3em' }}>Lånetakere:</div>
+          {book?.Låntetakere?.map((user, i) => (
+            <div key={i}>{user}</div>
+          ))}
+          <button title={btnTitle} disabled={!isAvailable} onClick={borrowHandler}>
+            Lån
+          </button>
+        </div>
       </div>
     </div>
   );
